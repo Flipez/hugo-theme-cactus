@@ -38,7 +38,7 @@
         </div>
         {{ end }}
         <div class="article-tag">
-          Reading time: {{ math.Round (div (countwords .Content) 220.0) }} minutes.
+          Reading time: {{ .ReadingTime }} minutes.
         </div>
       </div>
     </header>
