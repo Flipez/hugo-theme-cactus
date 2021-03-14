@@ -18,7 +18,11 @@
     {{ .Scratch.Set "colortheme" .Site.Params.Colortheme }}
   {{ end }}
   {{ $colortheme := .Scratch.Get "colortheme" }}
-  <link rel="stylesheet" href="{{ $colortheme | printf "css/style-%s.css" | absURL }}">
+  <link id="theme" rel="stylesheet" href="{{ $colortheme | printf "css/style-%s.css" | absURL }}">
+  <script type="text/javascript">
+    var theme = localStorage.getItem('theme');
+    document.getElementById("theme").href = '/css/style-' + theme + '.css';
+  </script>
   <!-- Custom CSS -->
   {{ range .Site.Params.css }} <link rel="stylesheet" href="{{ . | absURL }}"> {{ end }}
   {{ `

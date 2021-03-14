@@ -11,7 +11,26 @@ if (!!$.prototype.justifiedGallery) {
 }
 
 $(document).ready(function() {
+  const toggleSwitch = document.querySelector('.toggle-container input[type="checkbox"]');
+  const currentTheme = localStorage.getItem('theme');
 
+  if (currentTheme) {
+
+    if (currentTheme === 'dark') {
+      toggleSwitch.checked = false;
+    } 
+  }
+
+  function switchTheme(e) {
+    if (e.target.checked) {
+      localStorage.setItem('theme', 'classic');
+    } else {        
+      localStorage.setItem('theme', 'dark');
+    }
+    location.reload()    
+  }
+
+  toggleSwitch.addEventListener('change', switchTheme, false);
   /**
    * Shows the responsive navigation menu on mobile.
    */

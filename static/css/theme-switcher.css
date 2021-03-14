@@ -1,0 +1,72 @@
+.toggle-container {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 20px;
+  pointer-events: none;
+}
+
+.toggle-container input {
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: all;
+}
+
+.slider {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  cursor: pointer;
+  background-color: #808080;
+  transition: 0.4s;
+  pointer-events: none;
+}
+
+.slider::before {
+  content: "";
+  position: absolute;
+  height: 12px;
+  width: 12px;
+  left: 4px;
+  bottom: 4px;
+  background-color: #fff;
+  transition: 0.2s;
+  pointer-events: none;
+}
+
+.slider::after {
+  position: absolute;
+  content: "🌙";
+  height: 12px;
+  width: 12px;
+  right: 9px;
+  bottom: 5px;
+  transition: 0.2s;
+  pointer-events: none;
+  color: #fff;
+}
+
+input:checked + .slider {
+  background-color: #2196f3;
+}
+
+input:checked + .slider:before {
+  transform: translateX(20px);
+}
+
+input:checked + .slider:after {
+  content: "☀️";
+  left: 3px;
+}
+
+
+.slider.round {
+  border-radius: 17px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}

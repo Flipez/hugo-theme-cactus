@@ -19,7 +19,14 @@
       {{ range .Site.Menus.main }}
         <li><a href="{{ .URL }}">{{ .Name }}</a></li>
       {{ end }}
+      <li>
+        <div class="toggle-container">
+          <input type="checkbox" />
+          <div class="slider round"></div>
+      </div>
+      </li>
     </ul>
   </div>
 </header>
+
 
