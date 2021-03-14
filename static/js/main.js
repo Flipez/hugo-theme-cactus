@@ -12,7 +12,7 @@ if (!!$.prototype.justifiedGallery) {
 
 $(document).ready(function() {
   const toggleSwitch = document.querySelector('.toggle-container input[type="checkbox"]');
-  const currentTheme = localStorage.getItem('theme');
+  const currentTheme = localStorage.getItem('theme') || 'classic';
 
   if (currentTheme) {
 
